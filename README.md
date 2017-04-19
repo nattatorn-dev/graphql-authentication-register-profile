@@ -17,6 +17,12 @@ $ npm i
 $ npm run dev
 ```
 
+Set up your connection MongoDB in **test-server > src > db.js**:
+
+```
+mongoose.connect('mongodb://localhost:27017/test')
+```
+
 ## Tutorials 
 - <img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-medium.TAS6uQ-Y7kcKgi0xjcYHXw.ico" alt="icon" width="15" height="15"/>  [Engish](https://medium.com/marcius-corp/tutorial-graphql-authentication-register-profile-16c9eac919a2)
 - <img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-medium.TAS6uQ-Y7kcKgi0xjcYHXw.ico" alt="icon" width="15" height="15"/>  [Русский](https://medium.com/marcius-corp/tutorial-graphql-authentication-register-profile-ru-99e55304c281)
