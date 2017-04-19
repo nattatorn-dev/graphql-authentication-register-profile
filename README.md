@@ -17,7 +17,7 @@ $ npm i
 $ npm run dev
 ```
 
-Set up your connection MongoDB in **test-server > src > db.js**:
+Set up your connection to MongoDB in **test-server > src > db.js**:
 
 ```
 mongoose.connect('mongodb://localhost:27017/test')
