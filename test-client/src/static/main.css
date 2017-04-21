@@ -1,4 +1,4 @@
-@import "spectre";
+@import "spectre.min.css";
 
 body, html {
   background: #f2f2f2;
@@ -13,9 +13,10 @@ Layout
   justify-content: center;
   align-items: center;
   height: 100vh;
-  .item {
-    width: 300px;
-  }
+}
+
+.flex-center .item {
+  width: 300px;
 }
 
 .flex-bottom {

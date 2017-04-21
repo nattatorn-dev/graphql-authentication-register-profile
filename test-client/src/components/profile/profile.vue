@@ -77,7 +77,7 @@
     }
 </script>
 
-<style lang="less">
-    @import "../../static/less/main.less";
+<style>
+    @import "../../static/main.css";
 </style>
 
