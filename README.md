@@ -4,6 +4,10 @@ Full-stack example with authorization, registration, personal profile, editing a
 ## Demo | click picture to watch full demo
 [![](https://github.com/nikitamarcius/graphql-authentication-register-profile/blob/master/profile.png)](https://www.youtube.com/watch?v=2LDKGKItqgI)
 
+## Under the hood
+- **Client**: Apollo GraphQL + Vue-Apollo+ Vue2+ Vue router + LocalStorage
+- **Server**: Apollo GraphQL + Koa2 + Mongoose & MongoDB + JWT
+
 ## Installation
 
 ```
