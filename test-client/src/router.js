@@ -17,7 +17,6 @@ const routes = [
     {path: '/settings', component: settings, meta: {requiresAuth: true}},
     {path: '/auth', component: login},
     {path: '/register', component: register},
-    {path: '/logout', component: register},
     {path: '*', component: error},
 ]
 
