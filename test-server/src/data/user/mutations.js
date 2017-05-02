@@ -80,8 +80,8 @@ const auth = {
                 const public_key = jwt.sign({
                     id: data._id,
                 }, private_key)
-                data.secure.private_key = private_key
-                data.secure.public_key = public_key
+                data.private_key = private_key
+                data.public_key = public_key
                 return data.save()
             }
             throw  new Error('Input error')
