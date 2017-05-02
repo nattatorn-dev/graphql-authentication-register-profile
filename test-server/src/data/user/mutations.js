@@ -74,19 +74,18 @@ const auth = {
     },
     async resolve(root, args, options){
         const pass = sha3_512(args.password)
-        const auth = await UserModel.findOne({username: args.username, password: pass}, function (err, result) {
-            if (result !== null) {
+        return await UserModel.findOne({username: args.username, password: pass}).then(data => {
+            if (data !== null) {
                 const private_key = sha3_256(Math.random().toString(36).substr(2, 36))
                 const public_key = jwt.sign({
-                    id: result._id,
+                    id: data._id,
                 }, private_key)
-                result.private_key = private_key
-                result.public_key = public_key
-                result.save()
+                data.secure.private_key = private_key
+                data.secure.public_key = public_key
+                return data.save()
             }
+            throw  new Error('Input error')
         })
-        if (!auth) throw  new Error('Input error')
-        return await UserModel.findOne({username: args.username})
     }
 }
 
