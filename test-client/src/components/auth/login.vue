@@ -4,7 +4,7 @@
             <div class="toast text-center" v-if="show">{{error}}</div>
             <div class="form-group input-group mt-10">
                 <input type="text" class="form-input" placeholder="Username" v-model="username">
-                <router-link class="btn btn-link input-group-btn sign" to="register">Sign up</router-link>
+                <router-link class="btn btn-link input-group-btn sign" to="register" tabindex="-1">Sign up</router-link>
             </div>
             <div class="form-group input-group">
                 <input type="password" class="form-input" placeholder="Password" v-model="password">
@@ -24,8 +24,8 @@
                 username: null,
                 password: null,
 
-                error: '',
-                show: ''
+                error: null,
+                show: null
             }
         },
         methods: {
@@ -50,3 +50,7 @@
 
     }
 </script>
+
+<style>
+    @import "../../static/main.css";
+</style>

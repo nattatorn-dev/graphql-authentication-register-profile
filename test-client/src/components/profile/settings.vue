@@ -87,14 +87,13 @@
                         id: this.id,
                     }
                 }).then((data) => {
-                    this.$router.go('/auth')
                     auth.logout()
                 }).catch((error) => {
                     alert(error.graphQLErrors[0].message)
                 })
             },
             cancel(){
-                this.$router.push('profile')
+                this.$router.push('/')
             }
         },
         apollo: {

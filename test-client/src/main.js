@@ -8,8 +8,6 @@ import localStorage from 'localStorage'
 import router from './router'
 import auth from './auth'
 
-//auth.redirect()
-
 // Create a normal network interface:
 const networkInterface = createNetworkInterface({
     uri: 'http://localhost:3000/graphql',

@@ -16,7 +16,7 @@
                 <div class="panel">
                     <div class="panel-body">
                         <div class="btn-group btn-group-block">
-                            <router-link to="settings" class="btn btn-sm">Settings</router-link>
+                            <router-link :to="{name:'settings'}" class="btn btn-sm">Settings</router-link>
                             <button class="btn btn-sm" v-on:click="logout">Logout</button>
                         </div>
                     </div>

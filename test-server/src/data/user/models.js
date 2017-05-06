@@ -4,7 +4,7 @@ import {
     GraphQLNonNull,
     GraphQLString,
     GraphQLID
-} from 'graphql';
+} from 'graphql'
 import mongoose from 'mongoose'
 
 const schema = new mongoose.Schema({
@@ -30,40 +30,32 @@ const schema = new mongoose.Schema({
 
 export let UserModel = mongoose.model('User', schema)
 
+const user = {
+    _id: {
+        type: GraphQLID
+    },
+    username: {
+        type: GraphQLString
+    },
+    firstName: {
+        type: GraphQLString
+    },
+    lastName: {
+        type: GraphQLString
+    }
+}
+
 export let UserType = new GraphQLObjectType({
     name: 'User',
-    fields: {
-        _id: {
-            type: GraphQLID
-        },
-        username: {
-            type: GraphQLString
-        },
-        firstName: {
-            type: GraphQLString
-        },
-        lastName: {
-            type: GraphQLString
-        }
-    }
+    fields: user
 })
 
-export let UserInput = new GraphQLInputObjectType({
+export const UserInput = new GraphQLInputObjectType({
     name: "UserInput",
-    fields: {
-        username: {
-            type: GraphQLString
-        },
-        firstName: {
-            type: GraphQLString
-        },
-        lastName: {
-            type: GraphQLString
-        }
-    }
+    fields: user
 })
 
-export let UserCreate = new GraphQLInputObjectType({
+export const UserCreate = new GraphQLInputObjectType({
     name: "UserCreate",
     fields: {
         username: {
@@ -82,11 +74,11 @@ export let UserCreate = new GraphQLInputObjectType({
 });
 
 
-export let UserAuth = new GraphQLObjectType({
+export const UserAuth = new GraphQLObjectType({
     name: "UserAuth",
     fields: {
-        id:{
-          type: GraphQLID
+        id: {
+            type: GraphQLID
         },
         public_key: {
             type: GraphQLString

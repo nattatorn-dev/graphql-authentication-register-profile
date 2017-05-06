@@ -4,7 +4,7 @@
             <div class="toast text-center" v-if="show">{{error}}</div>
             <div class="form-group input-group mt-10">
                 <input type="text" class="form-input" placeholder="First Name" v-model="firstName">
-                <router-link class="btn btn-link input-group-btn" to="auth">Sign in</router-link>
+                <router-link class="btn btn-link input-group-btn" to="auth" tabindex="-1">Sign in</router-link>
             </div>
             <div class="form-group">
                 <input type="text" class="form-input" placeholder="Last name" v-model="lastName">

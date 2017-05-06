@@ -13,11 +13,34 @@ import localStorage from 'localStorage'
 Vue.use(VueRouter)
 
 const routes = [
-    {path: '/id:id', component: profile, meta: {requiresAuth: true}},
-    {path: '/settings', component: settings, meta: {requiresAuth: true}},
-    {path: '/auth', component: login},
-    {path: '/register', component: register},
-    {path: '*', component: error},
+    {
+        path: '/id/:id',
+        name: 'id',
+        meta: {requiresAuth: true, title: 'Profile'},
+        component: profile,
+    },
+    {
+        path: '/settings',
+        name: 'settings',
+        meta: {requiresAuth: true, title: 'Settings'},
+        component: settings,
+    },
+    {
+        path: '/auth',
+        name: 'auth',
+        meta: {title: 'Sign in'},
+        component: login
+    },
+    {
+        path: '/register',
+        name: 'register',
+        meta: {title: 'Sign up'},
+        component: register
+    },
+    {
+        path: '*',
+        component: error
+    },
 ]
 
 const router = new VueRouter({
@@ -27,24 +50,16 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.path === '/') {
-        if (!auth.login()) {
-            next('/auth')
-        } else {
-            next('/id' + localStorage.getItem('id'))
-        }
+        if (!auth.login()) next({name: 'auth'})
+        else next({name: 'id', params: {id: localStorage.getItem('id')}})
     } else if (to.meta.requiresAuth === true) {
-        if (!auth.login()) {
-            next('/auth')
-        } else {
-            next()
-        }
+        if (!auth.login()) next({name: 'auth'})
+        else next()
     } else if (to.meta.requiresAuth === undefined) {
-        if (!auth.login()) {
-            next()
-        } else {
-            next('/id' + localStorage.getItem('id'))
-        }
+        if (!auth.login()) next()
+        else next({name: 'id', params: {id: localStorage.getItem('id')}})
     }
+    document.title = to.meta.title
     next()
 })
 
