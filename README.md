@@ -31,4 +31,3 @@ connection [docs](http://mongoosejs.com/docs/connections.html)
 
 ## Tutorials 
 - <img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-medium.TAS6uQ-Y7kcKgi0xjcYHXw.ico" alt="icon" width="15" height="15"/>  [Tutorial: GraphQL authentication, register, profile](https://medium.com/@nikita.marcius/tutorial-graphql-authentication-register-profile-16c9eac919a2)
-- **Хабрахабр**  [GraphQL аутентификация, регистрация, личный профиль](https://habrahabr.ru/post/328142/)
