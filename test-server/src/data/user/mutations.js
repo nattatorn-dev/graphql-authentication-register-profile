@@ -78,7 +78,7 @@ const auth = {
             if (data !== null) {
                 const private_key = sha3_256(Math.random().toString(36).substr(2, 36))
                 const public_key = jwt.sign({
-                    id: data._id,
+                    sub: data._id,
                 }, private_key)
                 data.private_key = private_key
                 data.public_key = public_key
