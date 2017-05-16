@@ -7,7 +7,7 @@ import {
 
 import {UserModel, UserType, UserInput} from './models'
 
-const user = {
+export const user = {
     type: UserType,
     args: {
         id: {
@@ -20,7 +20,7 @@ const user = {
     }
 }
 
-const users = {
+export const users = {
     type: new GraphQLList(UserType),
     args: {
         count: {
