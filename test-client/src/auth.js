@@ -6,8 +6,7 @@ export default {
         return localStorage.getItem('id')
     },
     logout(){
-        router.go('/auth')
-        localStorage.removeItem('id')
-        localStorage.removeItem('public_key')
+        router.push('/auth')
+        localStorage.clear()
     }
 }
